@@ -3,7 +3,7 @@ package services
 import (
 	"database/sql"
 	"net/http"
-	"web/repo"
+	"go-posts-api/repo"
 
 	"github.com/gin-gonic/gin"
 )

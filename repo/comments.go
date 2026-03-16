@@ -3,7 +3,7 @@ package repo
 import (
 	"database/sql"
 	"log"
-	"web/data"
+	"go-posts-api/data"
 )
 
 func GetComments(db *sql.DB) (*[]data.Comment, error) {

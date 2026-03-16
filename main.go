@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"os"
 	"strconv"
-	"web/services"
+	"go-posts-api/services"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"

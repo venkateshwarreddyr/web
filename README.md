@@ -1,4 +1,4 @@
-# web
+# go-posts-api
 
 Go REST API built with [Gin](https://github.com/gin-gonic/gin) and PostgreSQL.
 

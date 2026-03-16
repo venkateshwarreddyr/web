@@ -1,4 +1,4 @@
-module web
+module go-posts-api
 
 go 1.21.3
 

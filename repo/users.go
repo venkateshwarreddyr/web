@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"encoding/json"
 	"log"
-	"web/data"
+	"go-posts-api/data"
 )
 
 func GetUsers(db *sql.DB) (*[]data.User, error) {
