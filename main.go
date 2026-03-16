@@ -2,8 +2,10 @@ package main
 
 import (
 	"database/sql"
+	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"strconv"
 	"web/services"
 
@@ -21,7 +23,15 @@ func main() {
 
 	r.Use(cors.New(config)) // Use the CORS middleware
 
-	db, err := sql.Open("postgres", "user=postgres dbname=postgres sslmode=disable")
+	dsn := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=%s",
+		getEnv("DB_HOST", "localhost"),
+		getEnv("DB_PORT", "5432"),
+		getEnv("DB_USER", "postgres"),
+		getEnv("DB_PASSWORD", ""),
+		getEnv("DB_NAME", "postgres"),
+		getEnv("DB_SSLMODE", "disable"),
+	)
+	db, err := sql.Open("postgres", dsn)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -51,4 +61,11 @@ func main() {
 	})
 
 	r.Run()
+}
+
+func getEnv(key, fallback string) string {
+	if val := os.Getenv(key); val != "" {
+		return val
+	}
+	return fallback
 }
