@@ -2,7 +2,6 @@ package services
 
 import (
 	"database/sql"
-	"fmt"
 	"net/http"
 	"web/repo"
 
@@ -11,11 +10,9 @@ import (
 
 func GetUsers(c *gin.Context, db *sql.DB) {
 	users, err := repo.GetUsers(db)
-
 	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
-
-	fmt.Println("hello12")
 	c.JSON(http.StatusOK, *users)
 }

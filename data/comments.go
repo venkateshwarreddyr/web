@@ -1,7 +1,7 @@
 package data
 
 type Comment struct {
-	PostId int    `json:"userId"`
+	PostId int    `json:"postId"`
 	Id     int    `json:"id"`
 	Name   string `json:"name"`
 	Email  string `json:"email"`

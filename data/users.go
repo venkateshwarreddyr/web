@@ -1,10 +1,5 @@
 package data
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 type User struct {
 	ID       int    `json:"id"`
 	Name     string `json:"name"`
@@ -23,27 +18,10 @@ type User struct {
 		} `json:"geo"`
 	} `json:"address"`
 	Company struct {
-		Name        string `json: "name"`
-		CatchPhrase string `json: "catchPhrase"`
-		BS          string `json: "bs"`
+		Name        string `json:"name"`
+		CatchPhrase string `json:"catchPhrase"`
+		BS          string `json:"bs"`
 	} `json:"company"`
-}
-
-func GetUsers() ([]User, error) {
-	var usersJSON = GetUsersDataFromDB()
-	var users []User
-	err := json.Unmarshal([]byte(usersJSON), &users)
-	if err != nil {
-		fmt.Println("Error:", err)
-		return nil, err
-	}
-
-	// for _, user := range users {
-	// 	fmt.Printf("insert into users (id, name, username, email, address, phone, website, company) values (%d, '%s', '%s', '%s', '%s', '%s', '%s', '%s');\n", user.ID, user.Name, user.Username, user.Email, GetJsonLikeOutput(user.Address), user.Phone, user.Website, GetJsonLikeOutput(user.Company))
-	// }
-	// fmt.Println()
-
-	return users, nil
 }
 
 func GetUsersDataFromDB() string {

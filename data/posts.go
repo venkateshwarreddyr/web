@@ -1,32 +1,10 @@
 package data
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 type Post struct {
 	UserId int    `json:"userId"`
 	Id     int    `json:"id"`
 	Title  string `json:"title"`
 	Body   string `json:"body"`
-}
-
-func GetPosts() ([]Post, error) {
-	var postsJSON = GetPostsDataFromDB()
-	var posts []Post
-	err := json.Unmarshal([]byte(postsJSON), &posts)
-	if err != nil {
-		fmt.Println("Error:", err)
-		return nil, err
-	}
-
-	for _, user := range posts {
-		fmt.Printf("insert into users (userId, id, title, body) values (%d, %d, '%s','%s');\n", user.UserId, user.Id, user.Title, user.Body)
-	}
-	fmt.Println()
-
-	return posts, nil
 }
 
 func GetPostsDataFromDB() string {

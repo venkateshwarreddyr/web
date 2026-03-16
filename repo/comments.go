@@ -2,7 +2,6 @@ package repo
 
 import (
 	"database/sql"
-	"fmt"
 	"log"
 	"web/data"
 )
@@ -60,6 +59,5 @@ func GetCommentsById(db *sql.DB, postId int) (*[]data.Comment, error) {
 
 		comments = append(comments, comment)
 	}
-	fmt.Println(comments)
 	return &comments, nil
 }
