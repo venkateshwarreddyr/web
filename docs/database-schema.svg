@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a" />
+      <stop offset="100%" style="stop-color:#1e293b" />
+    </linearGradient>
+    <filter id="s3" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="520" rx="16" fill="url(#bg3)"/>
+
+  <text x="450" y="42" text-anchor="middle" fill="#f8fafc" font-size="22" font-weight="700">Database Schema</text>
+  <text x="450" y="64" text-anchor="middle" fill="#94a3b8" font-size="13">PostgreSQL Tables &amp; Relationships</text>
+
+  <!-- USERS TABLE -->
+  <rect x="40" y="95" width="260" height="390" rx="12" fill="#1e293b" stroke="#6366f1" stroke-width="2" filter="url(#s3)"/>
+  <rect x="40" y="95" width="260" height="42" rx="12" fill="#6366f1"/>
+  <rect x="40" y="120" width="260" height="17" fill="#6366f1"/>
+  <text x="170" y="122" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">users</text>
+
+  <text x="60" y="162" fill="#f59e0b" font-size="12" font-weight="600">PK</text>
+  <text x="90" y="162" fill="#e2e8f0" font-size="12">id</text>
+  <text x="250" y="162" text-anchor="end" fill="#64748b" font-size="11">INTEGER</text>
+
+  <line x1="55" y1="175" x2="285" y2="175" stroke="#334155" stroke-width="1"/>
+
+  <text x="90" y="195" fill="#e2e8f0" font-size="12">name</text>
+  <text x="250" y="195" text-anchor="end" fill="#64748b" font-size="11">VARCHAR</text>
+
+  <text x="90" y="220" fill="#e2e8f0" font-size="12">username</text>
+  <text x="250" y="220" text-anchor="end" fill="#64748b" font-size="11">VARCHAR</text>
+
+  <text x="90" y="245" fill="#e2e8f0" font-size="12">email</text>
+  <text x="250" y="245" text-anchor="end" fill="#64748b" font-size="11">VARCHAR</text>
+
+  <text x="90" y="270" fill="#e2e8f0" font-size="12">phone</text>
+  <text x="250" y="270" text-anchor="end" fill="#64748b" font-size="11">VARCHAR</text>
+
+  <text x="90" y="295" fill="#e2e8f0" font-size="12">website</text>
+  <text x="250" y="295" text-anchor="end" fill="#64748b" font-size="11">VARCHAR</text>
+
+  <line x1="55" y1="308" x2="285" y2="308" stroke="#334155" stroke-width="1"/>
+  <text x="60" y="328" fill="#94a3b8" font-size="11" font-style="italic">Nested JSON:</text>
+
+  <text x="90" y="353" fill="#a78bfa" font-size="12">address</text>
+  <text x="250" y="353" text-anchor="end" fill="#64748b" font-size="11">JSONB</text>
+  <text x="100" y="373" fill="#64748b" font-size="10">street, suite, city, zipcode, geo{lat,lng}</text>
+
+  <text x="90" y="400" fill="#a78bfa" font-size="12">company</text>
+  <text x="250" y="400" text-anchor="end" fill="#64748b" font-size="11">JSONB</text>
+  <text x="100" y="420" fill="#64748b" font-size="10">name, catchPhrase, bs</text>
+
+  <!-- POSTS TABLE -->
+  <rect x="340" y="95" width="220" height="220" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2" filter="url(#s3)"/>
+  <rect x="340" y="95" width="220" height="42" rx="12" fill="#10b981"/>
+  <rect x="340" y="120" width="220" height="17" fill="#10b981"/>
+  <text x="450" y="122" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">posts</text>
+
+  <text x="360" y="162" fill="#f59e0b" font-size="12" font-weight="600">PK</text>
+  <text x="390" y="162" fill="#e2e8f0" font-size="12">id</text>
+  <text x="520" y="162" text-anchor="end" fill="#64748b" font-size="11">INTEGER</text>
+
+  <line x1="355" y1="175" x2="545" y2="175" stroke="#334155" stroke-width="1"/>
+
+  <text x="360" y="195" fill="#06b6d4" font-size="12" font-weight="600">FK</text>
+  <text x="390" y="195" fill="#e2e8f0" font-size="12">userId</text>
+  <text x="520" y="195" text-anchor="end" fill="#64748b" font-size="11">INTEGER</text>
+
+  <text x="390" y="225" fill="#e2e8f0" font-size="12">title</text>
+  <text x="520" y="225" text-anchor="end" fill="#64748b" font-size="11">VARCHAR</text>
+
+  <text x="390" y="255" fill="#e2e8f0" font-size="12">body</text>
+  <text x="520" y="255" text-anchor="end" fill="#64748b" font-size="11">TEXT</text>
+
+  <!-- COMMENTS TABLE -->
+  <rect x="600" y="95" width="260" height="250" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="2" filter="url(#s3)"/>
+  <rect x="600" y="95" width="260" height="42" rx="12" fill="#ef4444"/>
+  <rect x="600" y="120" width="260" height="17" fill="#ef4444"/>
+  <text x="730" y="122" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">comments</text>
+
+  <text x="620" y="162" fill="#f59e0b" font-size="12" font-weight="600">PK</text>
+  <text x="650" y="162" fill="#e2e8f0" font-size="12">id</text>
+  <text x="820" y="162" text-anchor="end" fill="#64748b" font-size="11">INTEGER</text>
+
+  <line x1="615" y1="175" x2="845" y2="175" stroke="#334155" stroke-width="1"/>
+
+  <text x="620" y="195" fill="#06b6d4" font-size="12" font-weight="600">FK</text>
+  <text x="650" y="195" fill="#e2e8f0" font-size="12">postId</text>
+  <text x="820" y="195" text-anchor="end" fill="#64748b" font-size="11">INTEGER</text>
+
+  <text x="650" y="225" fill="#e2e8f0" font-size="12">name</text>
+  <text x="820" y="225" text-anchor="end" fill="#64748b" font-size="11">VARCHAR</text>
+
+  <text x="650" y="255" fill="#e2e8f0" font-size="12">email</text>
+  <text x="820" y="255" text-anchor="end" fill="#64748b" font-size="11">VARCHAR</text>
+
+  <text x="650" y="285" fill="#e2e8f0" font-size="12">body</text>
+  <text x="820" y="285" text-anchor="end" fill="#64748b" font-size="11">TEXT</text>
+
+  <!-- Relationship lines -->
+  <!-- users.id -> posts.userId -->
+  <path d="M 300 160 L 320 160 L 320 195 L 340 195" fill="none" stroke="#06b6d4" stroke-width="2" stroke-dasharray="6,3"/>
+  <circle cx="300" cy="160" r="4" fill="#6366f1"/>
+  <text x="310" y="178" fill="#06b6d4" font-size="10">1:N</text>
+
+  <!-- posts.id -> comments.postId -->
+  <path d="M 560 160 L 580 160 L 580 195 L 600 195" fill="none" stroke="#06b6d4" stroke-width="2" stroke-dasharray="6,3"/>
+  <circle cx="560" cy="160" r="4" fill="#10b981"/>
+  <text x="570" y="178" fill="#06b6d4" font-size="10">1:N</text>
+
+  <!-- Legend -->
+  <rect x="340" y="380" width="520" height="110" rx="10" fill="rgba(255,255,255,0.03)" stroke="#334155" stroke-width="1"/>
+  <text x="360" y="405" fill="#94a3b8" font-size="12" font-weight="600">Legend</text>
+
+  <text x="370" y="430" fill="#f59e0b" font-size="11" font-weight="600">PK</text>
+  <text x="400" y="430" fill="#94a3b8" font-size="11">Primary Key</text>
+
+  <text x="520" y="430" fill="#06b6d4" font-size="11" font-weight="600">FK</text>
+  <text x="550" y="430" fill="#94a3b8" font-size="11">Foreign Key</text>
+
+  <line x1="670" y1="425" x2="710" y2="425" stroke="#06b6d4" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="720" y="430" fill="#94a3b8" font-size="11">Relationship</text>
+
+  <text x="370" y="465" fill="#a78bfa" font-size="11">JSONB</text>
+  <text x="420" y="465" fill="#94a3b8" font-size="11">Nested JSON fields stored as JSONB columns</text>
+
+  <text x="450" y="500" text-anchor="middle" fill="#475569" font-size="11">go-posts-api | PostgreSQL Schema</text>
+</svg>
